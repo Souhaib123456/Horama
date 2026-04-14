@@ -45,6 +45,20 @@
         .section-title span { text-transform: uppercase; letter-spacing: 2px; font-size: 0.75rem; color: var(--accent); font-weight: 700; }
         .section-title h2 { font-size: 2.5rem; margin-top: 10px; }
 
+        /* NOUVEAUX STYLES POUR "À PROPOS" */
+        .about-content { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; margin-bottom: 80px; }
+        .about-text p { margin-bottom: 20px; color: #444; font-size: 1.05rem; }
+        .mission-card { background: var(--primary); color: white; padding: 40px; border-radius: 20px; }
+        .mission-card h3 { color: white; margin-bottom: 20px; font-size: 1.5rem; }
+        .mission-card p { opacity: 0.9; margin-bottom: 15px; }
+
+        .values-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 40px; }
+        .value-item { padding: 30px; background: white; border: 1px solid var(--border); border-radius: 12px; transition: var(--transition); }
+        .value-item:hover { border-color: var(--primary); transform: translateY(-5px); }
+        .value-item h4 { font-size: 1rem; margin-bottom: 10px; color: var(--primary); }
+        .value-item p { font-size: 0.9rem; color: var(--accent); line-height: 1.4; }
+
+        /* STYLES EXISTANTS */
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
         .card { padding: 40px; background: var(--card-bg); border: 1px solid var(--border); border-radius: 16px; transition: var(--transition); }
         .card:hover { transform: translateY(-10px); border-color: var(--primary); box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
@@ -58,7 +72,6 @@
         .secteur-item::after { content: ""; position: absolute; bottom:0; left:0; width:100%; height:80%; background: linear-gradient(transparent, rgba(0,0,0,0.9)); z-index: 1; }
         .secteur-item .content { z-index: 2; position: relative; }
 
-        /* NOS REFERENCES */
         .ref-grid { 
             display: grid; 
             grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); 
@@ -76,7 +89,6 @@
         }
         .ref-item img:hover { filter: grayscale(0); opacity: 1; transform: scale(1.05); }
 
-        /* CONTACT SECTION (SANS FORMULAIRE) */
         .contact-section { text-align: center; background: #fafafa; border-top: 1px solid var(--border); }
         .email-link { 
             font-size: clamp(1.5rem, 4vw, 2.5rem); 
@@ -94,6 +106,7 @@
         @media (max-width: 1024px) {
             .hero { grid-template-columns: 1fr; text-align: center; }
             .hero-image { order: -1; }
+            .about-content { grid-template-columns: 1fr; gap: 40px; }
             nav ul { display: none; }
             .hero { padding-top: 140px; }
             .section-title { text-align: center; }
@@ -106,6 +119,7 @@
         <a href="#" class="logo"><img src="Horama.png" alt="HORAMA Logo"></a>
         <nav>
             <ul>
+                <li><a href="#about">À propos</a></li>
                 <li><a href="#expertises">Expertises</a></li>
                 <li><a href="#secteurs">Secteurs</a></li>
                 <li><a href="#references">Références</a></li>
@@ -122,6 +136,51 @@
             </div>
             <div class="hero-image">
                 <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1200" alt="Consulting Bureau">
+            </div>
+        </section>
+
+        <section id="about" style="background: #fff; border-top: 1px solid var(--border);">
+            <div class="section-title">
+                <span>Engagement & Vision</span>
+                <h2>À Propos de Nous</h2>
+            </div>
+
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>PRÉSENTATION</h3>
+                    <p><strong>HORAMA</strong> est un cabinet de conseil en stratégie engagé aux côtés des organisations publiques et privées pour concevoir et mettre en œuvre des stratégies agiles, responsables et génératrices de valeur durable.</p>
+                    <p>Nous intervenons à l'échelle nationale et régionale, auprès d'une clientèle diversifiée : <strong>startups, TPME, grands groupes, institutions financières, banques, ONG et institutions publiques.</strong></p>
+                    <p>Notre approche combine rigueur analytique, intelligence contextuelle et orientation résultats, pour transformer les défis complexes en leviers de croissance concrets.</p>
+                </div>
+                <div class="mission-card">
+                    <h3>NOTRE MISSION</h3>
+                    <p>La performance durable ne s'improvise pas ; elle se conçoit, se structure et s'accompagne.</p>
+                    <p>Dans un environnement en forte mutation (accélération digitale, pression ESG, montée des TPME innovantes, réformes institutionnelles), les organisations ont besoin d'un partenaire qui combine vision stratégique et capacité d'exécution.</p>
+                </div>
+            </div>
+
+            <h3>NOS VALEURS</h3>
+            <div class="values-grid">
+                <div class="value-item">
+                    <h4>Agilité</h4>
+                    <p>Adapter nos approches aux contextes instables et aux organisations en mouvement rapide.</p>
+                </div>
+                <div class="value-item">
+                    <h4>Responsabilité</h4>
+                    <p>Chaque recommandation intègre une dimension ESG, éthique et d'impact durable.</p>
+                </div>
+                <div class="value-item">
+                    <h4>Co-construction</h4>
+                    <p>Nos clients sont acteurs de leur transformation, pas simples destinataires.</p>
+                </div>
+                <div class="value-item">
+                    <h4>Excellence</h4>
+                    <p>Rigueur analytique, livrables de haute qualité, engagement de résultats mesurables.</p>
+                </div>
+                <div class="value-item">
+                    <h4>Courage stratégique</h4>
+                    <p>Nous formulons des recommandations exigeantes, même quand elles remettent en cause le statu quo.</p>
+                </div>
             </div>
         </section>
 
